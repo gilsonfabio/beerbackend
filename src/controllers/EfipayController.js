@@ -69,8 +69,6 @@ module.exports = {
         //console.log(res)
         //return response.json(res);
 
-        
-
         let txid = res.txid;
         
         let datAtual = new Date();

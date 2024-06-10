@@ -9,8 +9,8 @@ module.exports = {
         let email = request.body.email;
         let senha = request.body.password;
 
-        console.log('Email:', email);
-        console.log('Password:', senha);
+        //console.log('Email:', email);
+        //console.log('Password:', senha);
 
         const usuario = await connection('clientes')
             .where('cliEmail', email)
@@ -41,7 +41,7 @@ module.exports = {
         //let refreshToken = jwt.sign({ id: user.usrId, name: user.usrNome, email: user.usrEmail, nivel: user.usrNivAcesso  }, process.env.SECRET_JWT_REFRESH, {
         //    expiresIn: '2h'
         //});
-        console.log(user);
+        //console.log(user);
         
         return response.json(user);
 

@@ -11,7 +11,7 @@ const EfipayController = require('./controllers/EfipayController');
 
 routes.get('/', (request, response) => {
     response.json({
-        message: 'Bem-vindo ao servidor Pé de Cana!',
+        message: 'Bem-vindo ao servidor (Beer) Pé de Cana!',
     });
 });
 
