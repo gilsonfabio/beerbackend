@@ -110,7 +110,7 @@ module.exports = {
         //    return response.status(400).json({ error: 'Invalid User!'});
         //}
 
-        if(request.user.usrToken != '54b5779a-e566-48c1-a8d1-7888db35a257') throw 'Invalid User!';
+        //if(request.user.usrToken != '54b5779a-e566-48c1-a8d1-7888db35a257') throw 'Invalid User!';
 
 		return response.json({result: 'Webhook Pix recebido com sucesso!'});
 		
