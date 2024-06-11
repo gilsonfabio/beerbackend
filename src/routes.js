@@ -43,6 +43,7 @@ routes.post('/checkout', CheckoutController.checkout);
 routes.post('/authorize', EfipayController.auth);
 routes.post('/webhook', EfipayController.webhook);
 routes.post('/certificado', EfipayController.certificado);
+routes.post('/pix', EfipayController.pix);
 
 routes.get('/pedidos', PedidosController.index);
 routes.get('/searchPed/:idPed', PedidosController.searchPed);
