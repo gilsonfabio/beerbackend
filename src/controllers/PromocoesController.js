@@ -17,15 +17,8 @@ module.exports = {
         .where('promocoes.prmInicio','<=', datPromo)
         .where('promocoes.prmFinal', '>=', datPromo)
         .where('promocoes.prmStatus', status)
-        .select(['prmItens.*', 'promocoes.prmDescricao', 'promocoes.prmInicio', 'promocoes.prmFinal', 'promocoes.prmStatus', 'produtos.prdDescricao', 'produtos.prdReferencia']);
+        .select(['prmItens.*', 'promocoes.prmDescricao', 'promocoes.prmInicio', 'promocoes.prmFinal', 'promocoes.prmStatus', 'produtos.prdDescricao', 'produtos.prdReferencia', 'produtos.prdUrlPhoto']);
 
         return response.json(promocoes);
     },      
 };
-
-// promocoes`(`prmId`, `prmDescricao`, `prmData`, `prmInicio`, `prmFinal`, `prmUrlPhoto`, `prmStatus`)
-// prmItens`(`prmId`, `prmSeq`, `prmProId`, `prmPreVenda`, `prmPrePromocao`)
-//
-//.where('promocoes.prmInicio','<=', datPromo)
-//.where('promocoes.prmFinal', '>=', datPromo)
-//.where('promocoes.prmStatus', status)
