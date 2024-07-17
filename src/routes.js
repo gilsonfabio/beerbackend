@@ -8,6 +8,7 @@ const LinhasController = require('./controllers/LinhasController');
 const PedidosController = require('./controllers/PedidosController');
 const CheckoutController = require('./controllers/CheckoutController');
 const EfipayController = require('./controllers/EfipayController');
+const PromocoesController = require('./controllers/PromocoesController');
 
 routes.get('/', (request, response) => {
     response.json({
@@ -24,6 +25,8 @@ routes.post('/newproduct', ProductsController.create);
 routes.get('/detproduct/:proId', ProductsController.detProduct);
 routes.get('/searchPro/:idPro', ProductsController.searchPro);
 routes.get('/linprodutos/:idLnh', ProductsController.lnhProdutos);
+
+routes.get('/promocoes', PromocoesController.index);
 
 routes.get('/grupos', GruposController.index);
 routes.post('/newgrupo', GruposController.create);
