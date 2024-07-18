@@ -48,18 +48,19 @@ module.exports = {
     },
 
     async newuser(request, response) {
-        console.log(request.body);
+        //console.log(request.body);
         const {nome, cpf, nascimento, email, celular , password} = request.body;
         let cliApelido = nome;
         let cliPontos = 0;
         let cliUltLocalizacao = 1;
         var status = 'A'; 
-        var senha = crypto.createHash('md5').update(password).digest('hex');
+        let snhCrypt = await bcrypt.hash(password, saltRounds);
+
         const [cliId] = await connection('clientes').insert({
             cliNome: nome, 
             cliApelido, 
             cliEmail: email, 
-            cliPassword: senha,
+            cliPassword: snhCrypt,
             cliCelular: celular, 
             cliCpf: cpf, 
             cliNascimento: nascimento, 
