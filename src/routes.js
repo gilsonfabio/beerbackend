@@ -9,6 +9,7 @@ const PedidosController = require('./controllers/PedidosController');
 const CheckoutController = require('./controllers/CheckoutController');
 const EfipayController = require('./controllers/EfipayController');
 const PromocoesController = require('./controllers/PromocoesController');
+const AgendaController = require('./controllers/AgendaController');
 
 routes.get('/', (request, response) => {
     response.json({
@@ -53,5 +54,8 @@ routes.get('/searchPed/:idPed', PedidosController.searchPed);
 routes.get('/itePedido/:idPed', PedidosController.itePedido);
 routes.put('/entPedido/:idPed', PedidosController.entPedido);
 routes.post('/cnfPedido', PedidosController.cnfPedido);
+
+routes.post('/agenda', AgendaController.index);
+routes.get('/detalhes/:idAge', AgendaController.detalhes);
 
 module.exports = routes;

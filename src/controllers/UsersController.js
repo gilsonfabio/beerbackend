@@ -14,7 +14,7 @@ module.exports = {
 
         const usuario = await connection('clientes')
             .where('cliEmail', email)
-            .select(`cliId`, `cliNome`, `cliEmail`, `cliPassword`)
+            .select(`cliId`, `cliNome`, `cliEmail`, `cliPassword`, `cliExpToken`)
             .first();
         
         if (!usuario) {            
