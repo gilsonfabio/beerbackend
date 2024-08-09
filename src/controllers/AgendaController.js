@@ -28,5 +28,40 @@ module.exports = {
 
     async notification (request, response) {
         
-    }
+    },
+
+    async create(request, response) {
+        const {
+            ageIdUsr,
+            ageData,
+            ageHora, 
+            ageTitulo, 
+            ageDescricao, 
+            ageContato, 
+            ageCelular, 
+            ageLogradouro, 
+            ageComplemento, 
+            ageBairro, 
+            ageCidade, 
+            ageUf, 
+            ageCep } = request.body;
+
+        const [ageId] = await connection('agenda').insert({
+            ageIdUsr,
+            ageData,
+            ageHora, 
+            ageTitulo, 
+            ageDescricao, 
+            ageContato, 
+            ageCelular, 
+            ageLogradouro, 
+            ageComplemento, 
+            ageBairro, 
+            ageCidade, 
+            ageUf, 
+            ageCep  
+        });
+           
+        return response.json({ageId});
+    },
 };

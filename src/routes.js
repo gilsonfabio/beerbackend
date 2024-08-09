@@ -57,5 +57,6 @@ routes.post('/cnfPedido', PedidosController.cnfPedido);
 
 routes.post('/agenda', AgendaController.index);
 routes.get('/detalhes/:idAge', AgendaController.detalhes);
+routes.post('/newagenda', AgendaController.create);
 
 module.exports = routes;

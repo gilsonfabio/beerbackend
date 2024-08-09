@@ -8,6 +8,7 @@ module.exports = {
     async signIn(request, response) {
         let email = request.body.email;
         let senha = request.body.password;
+        let token = request.body.expoPushToken;
 
         //console.log('Email:', email);
         //console.log('Password:', senha);
@@ -19,6 +20,15 @@ module.exports = {
         
         if (!usuario) {            
             return response.status(400).json({ error: 'Não encontrou usuário com este ID'});
+        }else {
+            if (usuario.cliExpToken === null || usuario.cliExpToken === '') {
+                let id = usuario.cliId;
+                const updToken = await connection('clientes')
+                .where('cliId', id)
+                .update({
+                    cliExpToken: token
+                });
+            }    
         } 
 
         //console.log(user.usrPassword)
